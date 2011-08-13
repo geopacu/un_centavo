@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  titulo: MyString
+  descripcion: MyText
+  imagen_url: MyString
+  precio_mercado: 9.99
+  precio_base: 9.99
+  ahorro: 9.99
+
+two:
+  titulo: MyString
+  descripcion: MyText
+  imagen_url: MyString
+  precio_mercado: 9.99
+  precio_base: 9.99
+  ahorro: 9.99

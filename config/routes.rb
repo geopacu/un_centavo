@@ -1,4 +1,6 @@
 UnCentavo::Application.routes.draw do
+  resources :productos
+
   resources :categorias
 
   # The priority is based upon order of creation:
