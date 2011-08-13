@@ -1,33 +1,34 @@
-<h1>Listing productos</h1>
+<div id = "product_list">
+	<h1>Listado de productos </h1>
+	<table>
+		<% @productos.each do |producto| %>
+			<tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+				<td>
+					<%= image_tag(producto.imagen_url,:class => 'list_image')%>
+				</td>
+				
+				<td class="list_description">
+					<dl>
+						<dt><%= producto.titulo %></dt>
+						<dd><%= truncate(strip_tags(producto.descripcion),
+								:length => 80)%></dd>
+						<dd><%= producto.precio_mercado%> </dd>
+					</dl>
+				</td>
+				
+				<td class="list_actions">
+					<%= link_to 'Ver', producto %></br>
+					<%= link_to 'Editar', edit_producto_path(producto) %></br>
+					<%= link_to 'Eliminar', producto,
+								:confirm => 'Estas seguro',
+								:method => :delete %>
+				</td>
+			</tr>
+		<% end %>
+	</table>
+</div>
 
-<table>
-  <tr>
-    <th>Titulo</th>
-    <th>Descripcion</th>
-    <th>Imagen url</th>
-    <th>Precio mercado</th>
-    <th>Precio base</th>
-    <th>Ahorro</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+</br>
 
-<% @productos.each do |producto| %>
-  <tr>
-    <td><%= producto.titulo %></td>
-    <td><%= producto.descripcion %></td>
-    <td><%= producto.imagen_url %></td>
-    <td><%= producto.precio_mercado %></td>
-    <td><%= producto.precio_base %></td>
-    <td><%= producto.ahorro %></td>
-    <td><%= link_to 'Show', producto %></td>
-    <td><%= link_to 'Edit', edit_producto_path(producto) %></td>
-    <td><%= link_to 'Destroy', producto, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Producto', new_producto_path %>
+<%= link_to 'Nuevo Producto', new_producto_path %>
+	
