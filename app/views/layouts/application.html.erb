@@ -2,13 +2,26 @@
 <html>
 <head>
   <title>Un Centavo</title>
-  <%= stylesheet_link_tag :all %>
+  <%= stylesheet_link_tag "scaffold" %>
+  <%= stylesheet_link_tag "depot", :media => "all" %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
 </head>
-<body>
-
-<%= yield %>
-
+<body id="store">
+	<div id="banner">
+		<%= image_tag("logo.png")%>
+		<%= @page_title || "Un Centavo"%>
+	</div>
+	<div id="columns">
+		<div id="side">
+			<a href="http://www....">Inicio</a></br>
+			<a href="http://www....">Preguntas</a></br>
+			<a href="http://www....">Noticias</a></br>
+			<a href="http://www....">Contactar</a></br>
+		</div>
+		<div id="main">
+			<%= yield %>
+		</div>
+	</div>
 </body>
 </html>
