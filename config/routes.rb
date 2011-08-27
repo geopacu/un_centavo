@@ -1,4 +1,6 @@
 UnCentavo::Application.routes.draw do
+  resources :usuarios
+
   get "tienda/index"
 
   resources :productos
