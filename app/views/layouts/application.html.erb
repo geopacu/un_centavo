@@ -18,6 +18,14 @@
 			<a href="http://www....">Preguntas</a></br>
 			<a href="http://www....">Noticias</a></br>
 			<a href="http://www....">Contactar</a></br>
+			
+			<%if session["usuario_id"]%>
+				<br/>
+				<%= link_to 'Productos', productos_path%></br>
+				<%= link_to 'Usuarios' , usuarios_path%></br>
+				<br/>
+				<%= button_to 'Logout', logout_path, :method => :delete %>
+			<%end%>
 		</div>
 		<div id="main">
 			<%= yield %>
