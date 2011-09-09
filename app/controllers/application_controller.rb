@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   
     def authorize
       unless Usuario.find_by_id(session[:usuario_id])
-        redirect_to login_url, :notice => "Por favor logeese"
+        redirect_to login_url, :notice => "Por favor logeese..."
       end
     end
 end
